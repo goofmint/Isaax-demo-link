@@ -1,0 +1,12 @@
+{
+  "name": "node-app",
+  "version": "",
+  "description": "node - raspberry-pi",
+  "main": "app.py",
+  "author": "",
+  "language":"Node.js",
+  "license": "",
+  "scripts": {
+     "start": "node app.js"
+    }
+}
