@@ -1,12 +1,12 @@
 {
-  "name": "node-app",
+  "name": "python-app",
   "version": "",
-  "description": "node - raspberry-pi",
+  "description": "python - raspberry-pi",
   "main": "app.py",
   "author": "",
-  "language":"Node.js",
+  "language":"Python",
   "license": "",
   "scripts": {
-     "start": "node app.js"
+     "start": "python app.py"
     }
 }
