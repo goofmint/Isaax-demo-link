@@ -12,9 +12,9 @@ while True:
     acc_values = [round(x,2) for x in motion.accelerometer()]
     output = """
 温度: {t:.2f}c
-Pressure: {p:.2f}{unit}
-Light: {c}
-Accelerometer: {ax}g {ay}g {az}g
+気圧: {p:.2f}{unit}
+明るさ: {c}
+加速度: {ax}g {ay}g {az}g
 """.format(
         unit = unit,
         t = weather.temperature(),
