@@ -10,7 +10,7 @@ unit = 'hPa'
 while True:
     acc_values = [round(x,2) for x in motion.accelerometer()]
     output = """
-Temp: {t:.2f}c
+温度: {t:.2f}c
 Pressure: {p:.2f}{unit}
 Light: {c}
 Accelerometer: {ax}g {ay}g {az}g
