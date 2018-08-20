@@ -8,7 +8,7 @@ while True:
     with sr.Microphone() as source:
         audio = r.listen(source)
         try:
-            print(r.recognize_google(audio, language='ja-JP'))
+            print(r.recognize_google(audio, language='ja-JP'), flush=True))
         except sr.UnknownValueError:
             print("Google Cloud Speech could not understand audio")
         except sr.RequestError as e:
