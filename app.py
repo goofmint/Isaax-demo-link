@@ -3,8 +3,7 @@
 import speech_recognition as sr
 
 r = sr.Recognizer()
-with sr.Microphone(device_index = 0, sample_rate = 44100, chunk_size = 512) as source:
-    print("Say something!")
+with sr.Microphone(device_index = 1, sample_rate = 44100, chunk_size = 512) as source:
     audio = r.listen(source)
 while True:
     with sr.Microphone() as source:
