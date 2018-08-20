@@ -7,6 +7,6 @@
   "language":"Python",
   "license": "",
   "scripts": {
-     "start": "python app.py"
+     "start": "python3 app.py"
     }
 }

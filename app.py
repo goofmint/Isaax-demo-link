@@ -1,29 +1,15 @@
-# -*- coding: utf-8 -*-
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-import sys
-import time
+import speech_recognition as sr
 
-from envirophat import light, weather, motion, analog
-
-unit = 'hPa'
+r = sr.Recognizer()
 
 while True:
-    acc_values = [round(x,2) for x in motion.accelerometer()]
-    output = """
-温度: {t:.2f}c
-気圧: {p:.2f}{unit}
-明るさ: {c}
-加速度: {ax}g {ay}g {az}g
-""".format(
-        unit = unit,
-        t = weather.temperature(),
-        p = weather.pressure(unit=unit),
-        c = light.light(),
-        ax = acc_values[0],
-        ay = acc_values[1],
-        az = acc_values[2]
-)
-    sys.stdout.write(output)
-    sys.stdout.flush()
-    time.sleep(5)
+    with sr.Microphone() as source:
+        audio = r.listen(source)
+        try:
+            print(r.recognize_google(audio, language='ja-JP'))
+        except sr.UnknownValueError:
+            print("Google Cloud Speech could not understand audio")
+        except sr.RequestError as e:
+            print("Could not request results from Google Cloud Speech service; {0}".format(e))
